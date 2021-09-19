@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-const SecondaryStory = ({ id, title, image, location, abstract }) => {
+const SecondaryStory = ({ id, title, image, location, abstract, ...delegated }) => {
   return (
-    <a href={`/story/${id}`}>
+    <a {...delegated} href={`/story/${id}`}>
       <Wrapper>
         <Image alt={image.alt} src={image.src} />
         <Heading>{title}</Heading>
@@ -43,8 +43,15 @@ const Heading = styled.h2`
 
 const Abstract = styled.p`
   grid-area: abstract;
+  align-self: start;
+
   font-size: 1rem;
   white-space: pre-wrap;
+
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 `;
 
 export default SecondaryStory;

@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import {QUERIES} from "../../constants";
 
-const OpinionStory = ({ id, title, author, avatar }) => {
+const OpinionStory = ({ id, title, author, avatar, ...delegated }) => {
   return (
-    <a href={`/story/${id}`}>
+    <a {...delegated} href={`/story/${id}`}>
       <Wrapper>
         <Avatar alt="" src={avatar} />
         <div>
@@ -25,6 +26,14 @@ const Avatar = styled.img`
   height: 48px;
   border-radius: 50%;
   object-fit: cover;
+
+  margin-left: 16px;
+  float: right;
+
+  @media ${QUERIES.tabletOnly} {
+    margin-left: revert;
+    float: revert;
+  }
 `;
 
 const AuthorName = styled.p`

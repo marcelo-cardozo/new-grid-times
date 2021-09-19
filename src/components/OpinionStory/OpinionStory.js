@@ -28,10 +28,12 @@ const Avatar = styled.img`
   object-fit: cover;
 
   margin-left: 16px;
+  margin-bottom: 16px;
   float: right;
 
   @media ${QUERIES.tabletOnly} {
     margin-left: revert;
+    margin-bottom: revert;
     float: revert;
   }
 `;

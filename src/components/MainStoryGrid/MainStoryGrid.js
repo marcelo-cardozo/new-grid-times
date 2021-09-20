@@ -125,9 +125,9 @@ const StoryOpinionList = styled.div`
     gap: 32px;
     
     ${StyledOpinionStory} {
-      padding-top: revert;
-      padding-bottom: revert;
-      border-top: revert;
+      margin-bottom: revert !important;
+      padding-bottom: revert !important;
+      border-bottom: revert !important;
       flex:1;
       min-width: ${176/16}rem;
     }
